@@ -13,29 +13,19 @@ static defaultProps = {
 
 constructor(props){
 	super(props)
-	
-	// Responsible to render current updated coin face
 	this.state = {
-	
-	// Track total number of flips
 	currFace : null,
 	totalFlips:0,
 	heads: 0
 	}
-	
-	// Binding context of this keyword
+
 	this.handleClick = this.handleClick.bind(this)
 }
-
-// Function takes array of different faces of a coin
-// and return a random chosen single face
 choice(arr){
 	const randomIdx = Math.floor(Math.random() * arr.length)
 	return arr[randomIdx]
 }
 
-// Function responsible to update the states
-// according to users intractions
 flipCoin(){
 	const newFace = this.choice(this.props.coins)
 	this.setState(curState => {
